@@ -70,3 +70,21 @@ npm install  open-browser-webpack-plugin --sae-dev
 webpack 分离css
 
 npm install  extract-text-webpack-plugin --save-dev
+
+---
+-	install
+-	css、sass
+-	html
+-	open browser
+-	js优化（删除注释 压缩，verder，common）
+-	prod
+-	icon
+-	flag
+-	image
+
+
+# How to run :+1:
+~~~sh
+npm run dev
+npm run build
+~~~

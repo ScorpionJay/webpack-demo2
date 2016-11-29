@@ -1,3 +1,4 @@
+var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var OpenBrowserPlugin = require('open-browser-webpack-plugin')
 var ExtractTextPlugin = require("extract-text-webpack-plugin")

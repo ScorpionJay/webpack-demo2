@@ -1,0 +1,40 @@
+{
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "description": "webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --config webpack.dev.js --content-base src --port 9999 --watch   --inline --hot",
+    "build": "webpack --config webpack.pro.js --content-base src --inline"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ScorpionJay/webpack-demo.git"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "jay",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ScorpionJay/webpack-demo/issues"
+  },
+  "homepage": "https://github.com/ScorpionJay/webpack-demo#readme",
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "css-loader": "^0.26.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^2.24.1",
+    "node-sass": "^3.13.0",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3"
+  },
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  }
+}

@@ -71,12 +71,21 @@ webpack 分离css
 
 npm install  extract-text-webpack-plugin --save-dev
 
+
+# 使用es6
+https://github.com/babel/babel-loader
+~~~sh
+npm install babel-loader babel-core babel-preset-es2015 --save-dev
+
+
+~~~
+
 ---
 -	install
 -	css、sass
 -	html
 -	open browser
--	js优化（删除注释 压缩，verder，common）
+-	js优化（删除注释 压缩，vendor，common）
 -	prod
 -	icon
 -	flag

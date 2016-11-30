@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --config webpack.dev.js --content-base src --port 9999 --watch   --inline --hot",
-    "build": "webpack --config webpack.pro.js --content-base src --inline"
+    "build": "rimraf dist & webpack --config webpack.pro.js --content-base src --inline"
   },
   "repository": {
     "type": "git",
@@ -35,6 +35,7 @@
     "webpack": "^1.13.3"
   },
   "dependencies": {
+    "jquery": "^3.1.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1"
   }

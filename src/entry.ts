@@ -1,3 +1,7 @@
+import './app.css'
+import './sass/main.scss'
+
+
 function sayHello(name: string) {
     return 'Hello, ' + name;
 }
@@ -5,3 +9,5 @@ function sayHello(name: string) {
 let myName = 'Jay';
 
 console.log(sayHello(myName));
+
+

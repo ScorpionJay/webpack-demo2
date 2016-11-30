@@ -9,17 +9,24 @@ module.exports = {
 	cache:true,
 	devtool: 'source-map',
     entry: {
-    	app: "./entry.ts",
+    	'polyfills': './polyfills.ts',
+    	app: "./main.ts",
+    	'vendor': './entry.ts',
     	//vendor: ["jquery"]
+	},
+	resolve: {
+	    extensions: ['', '.js', '.ts']
 	},
 	externals: {
         // require("jquery") is external and available
         //  on the global var jQuery
-        'jquery': 'jQuery'
+        'jquery': 'jQuery',
+        'react':'window.React',
+        'react-dom':'window.ReactDOM'
     },
     output: {
         path: path.join(__dirname, "dev"),
-        filename: "[name].[hash].js"
+        filename: "[name].js"
     },
     module: {
         loaders: [
@@ -30,11 +37,11 @@ module.exports = {
 		      exclude: /(node_modules)/,
 		      loader: 'babel-loader',
 		      query: {
-		        presets: ['es2015']
+		        presets: ['es2015','react']
 		      }
 		    },
 		    // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
-      		{ test: /\.tsx?$/, loader: 'ts-loader' }
+      		{ test: /\.tsx?$/, loader: 'ts' }
         ]
     },
     plugins: [
@@ -56,15 +63,15 @@ module.exports = {
         //     warnings: false
         //   }
         // }),
-        new webpack.ProvidePlugin({
-             // Automtically detect jQuery and $ as free var in modules
-             // and inject the jquery library
-             // This is required by many jquery plugins
-             $: "jquery",
-             jQuery: "jquery",
-             //"window.jQuery": "jquery"
-         }),
+        // new webpack.ProvidePlugin({
+        //      // Automtically detect jQuery and $ as free var in modules
+        //      // and inject the jquery library
+        //      // This is required by many jquery plugins
+        //      $: "jquery",
+        //      jQuery: "jquery",
+        //      //"window.jQuery": "jquery"
+        //  }),
         // 打开浏览器
-  		new OpenBrowserPlugin({ url: 'http://localhost:9999' })
+  		// new OpenBrowserPlugin({ url: 'http://localhost:9999' })
     ]
 };

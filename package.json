@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --config webpack.dev.js --content-base src --port 9999 --watch   --inline --hot",
+    "dev": "webpack-dev-server --config webpack.dev.js --content-base src --port 9999 --watch   --inline --hot ",
     "build": "rimraf dist & webpack --config webpack.pro.js --content-base src --inline"
   },
   "repository": {
@@ -36,8 +36,19 @@
     "webpack": "^1.13.3"
   },
   "dependencies": {
-    "jquery": "^3.1.1",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+      "@angular/common": "2.0.0-rc.6",
+    "@angular/compiler": "2.0.0-rc.6",
+    "@angular/core": "2.0.0-rc.6",
+    "@angular/forms": "2.0.0-rc.6",
+    "@angular/http": "2.0.0-rc.6",
+    "@angular/platform-browser": "2.0.0-rc.6",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.6",
+    "@angular/router": "3.0.0-rc.2",
+    "angular2-in-memory-web-api": "0.0.18",
+    "core-js": "^2.4.1",
+    "debug": "~2.2.0",
+    "morgan": "~1.7.0",
+    "rxjs": "5.0.0-beta.11",
+    "zone.js": "^0.6.17"
   }
 }

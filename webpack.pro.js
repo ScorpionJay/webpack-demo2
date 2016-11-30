@@ -9,13 +9,16 @@ module.exports = {
     cache:true,
     devtool: false,
     entry: {
-        app: "./entry.ts",
+        app: "./index.js",
+        'vendor': './entry.ts',
         //vendor: ["jquery"]
     },
     externals: {
         // require("jquery") is external and available
         //  on the global var jQuery
-        'jquery': 'jQuery'
+        'jquery': 'jQuery',
+        'react':'window.React',
+        'react-dom':'window.ReactDOM'
     },
     output: {
         path: path.join(__dirname, "dist"),
@@ -30,7 +33,7 @@ module.exports = {
               exclude: /(node_modules)/,
               loader: 'babel-loader',
               query: {
-                presets: ['es2015']
+                presets: ['es2015','react']
               }
             },
              // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`

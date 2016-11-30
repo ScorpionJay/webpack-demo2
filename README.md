@@ -117,3 +117,17 @@ add tsconfig.json
 }
 ~~~
 
+
+ng2
+
+npm install angular2 -save
+
+
+
++-- UNMET PEER DEPENDENCY es6-shim@^0.35.0
++-- UNMET PEER DEPENDENCY reflect-metadata@0.1.2
++-- UNMET PEER DEPENDENCY rxjs@5.0.0-beta.6
+`-- UNMET PEER DEPENDENCY zone.js@^0.6.12
+
+
+npm info angular2

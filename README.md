@@ -97,3 +97,23 @@ npm install babel-loader babel-core babel-preset-es2015 --save-dev
 npm run dev
 npm run build
 ~~~
+
+
+
+# ts loader
+~~~sh
+npm install ts-loader
+
+
+// all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
+{ test: /\.tsx?$/, loader: 'ts-loader' }
+~~~
+
+add tsconfig.json
+~~~js
+{
+  "compilerOptions": {
+  }
+}
+~~~
+

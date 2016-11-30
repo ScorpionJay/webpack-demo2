@@ -9,7 +9,7 @@ module.exports = {
     cache:true,
     devtool: false,
     entry: {
-        app: "./index",
+        app: "./entry.ts",
         //vendor: ["jquery"]
     },
     externals: {
@@ -32,7 +32,9 @@ module.exports = {
               query: {
                 presets: ['es2015']
               }
-            }
+            },
+             // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
+            { test: /\.tsx?$/, loader: 'ts-loader' }
         ]
     },
     plugins: [

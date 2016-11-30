@@ -6,7 +6,6 @@ var path = require("path")
 
 module.exports = {
     context: path.join(__dirname, "src"),
-    cache:true,
     devtool: false,
     entry: {
         app: "./index",
@@ -15,7 +14,9 @@ module.exports = {
     externals: {
         // require("jquery") is external and available
         //  on the global var jQuery
-        'jquery': 'jQuery'
+        'jquery': 'jQuery',
+        'react':'window.React',
+        'react-dom':'window.ReactDOM'
     },
     output: {
         path: path.join(__dirname, "dist"),
@@ -28,9 +29,9 @@ module.exports = {
             {
               test: /\.js$/,
               exclude: /(node_modules)/,
-              loader: 'babel-loader',
+              loader: 'babel',
               query: {
-                presets: ['es2015']
+                presets: ['react','es2015'],
               }
             }
         ]
@@ -47,10 +48,10 @@ module.exports = {
               }
         }),
         // 分离css
-        new ExtractTextPlugin("styles.css"),
+        new ExtractTextPlugin("styles.[hash].css"),
         // 分离库
         //new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"vendor.js"),
-        // 优化js
+        // // 优化js
         new webpack.optimize.UglifyJsPlugin({
           output: {
             comments: false,  // 是否输出注释
@@ -63,9 +64,11 @@ module.exports = {
              // Automtically detect jQuery and $ as free var in modules
              // and inject the jquery library
              // This is required by many jquery plugins
-             $: "jquery",
-             jQuery: "jquery",
-             //"window.jQuery": "jquery"
+             // $: "jquery",
+             // jQuery: "jquery",
+             // //"window.jQuery": "jquery"
+             // 'react':'window.React',
+             // 'react-dom':'window.react-dom'
          }),
     ]
 };

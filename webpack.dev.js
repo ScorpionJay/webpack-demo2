@@ -15,7 +15,9 @@ module.exports = {
 	externals: {
         // require("jquery") is external and available
         //  on the global var jQuery
-        'jquery': 'jQuery'
+        'jquery': 'jQuery',
+        'react':'window.React',
+        'react-dom':'window.ReactDOM'
     },
     output: {
         path: path.join(__dirname, "dev"),
@@ -28,9 +30,9 @@ module.exports = {
             {
 		      test: /\.js$/,
 		      exclude: /(node_modules)/,
-		      loader: 'babel-loader',
+		      loader: 'babel',
 		      query: {
-		        presets: ['es2015']
+		        presets: ['react','es2015'],
 		      }
 		    }
         ]
@@ -58,9 +60,11 @@ module.exports = {
              // Automtically detect jQuery and $ as free var in modules
              // and inject the jquery library
              // This is required by many jquery plugins
-             $: "jquery",
-             jQuery: "jquery",
-             //"window.jQuery": "jquery"
+             // $: "jquery",
+             // jQuery: "jquery",
+             // //"window.jQuery": "jquery"
+             // 'react':'window.React',
+             // 'react-dom':'window.react-dom'
          }),
         // 打开浏览器
   		new OpenBrowserPlugin({ url: 'http://localhost:9999' })
